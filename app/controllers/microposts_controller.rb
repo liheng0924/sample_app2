@@ -7,19 +7,27 @@ class MicropostsController < ApplicationController
   
   def create
     @micropost=current_user.microposts.build(micropost_params)
-    if @micropost.save
-      flash[:success]="Micropost created!"
-      redirect_to root_url
-    else
-      #redirect_to root_url  #no error messages show
-      @feed_items=[]
-      render 'static_pages/home'
+    respond_to do |format|
+      if @micropost.save
+        #flash[:success]="Micropost created!"
+        #format.html {redirect_to root_url,notice: 'Micropost created!' }
+        format.html {redirect_to root_url }
+        format.js
+      else
+        @feed_items=[]
+        format.html {render 'static_pages/home'}
+        format.js
+      end
     end
   end
 
   def destroy
     @micropost.destroy
-    redirect_to root_url
+    #redirect_to root_url
+    respond_to do |format|
+      format.html {redirect_to root_url }
+      format.js
+    end
   end
 
   private
