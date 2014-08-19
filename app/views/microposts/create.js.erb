@@ -1,0 +1,10 @@
+<%if @micropost.errors.empty? %>
+  $("#errors").fadeOut();    //隐藏errors信息，防止提交成功仍有错误信息展示
+  $('<%= escape_javascript(render 'shared/feed_item_ajax', object: @micropost) %>').prependTo('#microposts').hide().fadeIn();
+  $('#new_micropost')[0].reset();   //重置表单数据
+<%else%>
+  $("#errors").html('<%= escape_javascript(render 'shared/error_messages', object: @micropost) %>').hide().fadeIn();
+<%end%>
+$('#micropost_content')[0].focus();  //光标栏位重置
+
+

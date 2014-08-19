@@ -12,7 +12,8 @@ html {
 overflow-y: scroll;
 }
 body {
-padding-top: 60px;
+  background-color:#eaeaea;
+  padding-top: 60px;
 }
 section {
 overflow: auto;
@@ -225,4 +226,98 @@ height: 100px;
 margin-bottom: 5px;
 }
 }
-
+.title{
+  font-size: 14px;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  display: block;
+  color: #0069D6;
+}
+/*micropost show*/
+.box{
+  background-color: #fff;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  margin: 0 0 20px 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0px 2px rgba(0,0,0,0.07);
+  -moz-box-shadow: 0 0px 2px rgba(0,0,0,0.07);
+  box-shadow: 0 0px 2px rgba(0,0,0,0.07);
+}
+#topic-show {
+  .infos {
+  position: relative;
+  margin-bottom: 10px;
+  margin-right: 56px;
+  border-bottom: 1px solid #eaeaea;
+  margin: -10px -10px 0;
+  background: #f5f5f5;
+  border-radius: 3px 3px 0 0;
+  padding: 10px;
+  }
+  .avatar-large {
+    width: 58px;
+  }
+  h1 {
+    margin: 0px;
+    font-size: 22px;
+    color: #333;
+    text-align: left;
+    line-height: 100%;
+    margin-bottom: 8px;
+  }
+}
+.pull-right {
+  float: right;
+}
+.topics {
+  .body {
+    margin-bottom: 10px;
+    margin-top: 8px;
+  }
+  .tools {
+    text-align: right;
+    height: 16px;
+    overflow: hidden;
+  }
+}
+.box-gray {
+  background: #F5F5F5;
+}
+#replies {
+  .total {
+  padding: 0 10px 6px 10px;
+  border-bottom: 1px solid #eaeaea;
+  color: #999;
+  margin: 0 -10px;
+  }
+  .reply {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 8px 10px;
+    margin: 0 -10px;
+    background: #FFF;
+    .body {
+      text-align: left;
+      margin-top: 5px;
+    }
+    .info {
+      font-size: 12px;
+      color: #bbb;
+      height: 20px;
+      .name a {
+        color: #888;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 4px;
+      }
+      .opts {
+        float: right;
+        text-align: right;
+      }
+    }
+  }
+}

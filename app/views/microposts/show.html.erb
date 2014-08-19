@@ -1,0 +1,48 @@
+<div class="content">
+  <div id="topic-show" class="topics box hfeed">
+    <div class="infos">
+      <div class="pull-right avatar-large">
+        <%= link_to gravatar_for(@micropost.user), @micropost.user %>
+      </div>
+      <h1 class="entry-title"><%= @micropost.title %></h1>
+      <div class="info leader">
+        <span class="timestamp">
+          <%= link_to @micropost.user.name, @micropost.user %>
+          Posted <%= time_ago_in_words(@micropost.created_at) %> ago.
+        </span>
+      </div>
+    </div>
+    <div class="body entry-content">
+      <%= wrap(@micropost.content) %>
+    </div>
+    <div class="tools pull-right">
+      <% if current_user?(@micropost.user) %>
+          <%= link_to "delete", @micropost, method: :delete,
+                      title: @micropost.content ,remote:true%>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="replies" class="box box-gray">
+    <div class="total">
+      共收到N条回复
+    </div>
+    <div class="items">
+      <div class="reply">
+        <div class="pull-left face">img</div>
+        <div class="infos">
+          <div class="info">
+            <span class="name"><a data-name="wcc526" href="/wcc526">黑贝</a></span>
+            <span class="time"></span>
+            <span class="opts"></span>
+          </div>
+          <div class="body">十分的不错！</div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination"></div>
+  </div>
+  <div id="reply" class="form box">
+
+  </div>
+</div>
