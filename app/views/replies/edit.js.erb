@@ -1,0 +1,5 @@
+//j 等同于 escape_javascript; .replaceWith 并不等同于 .html ,使用replaceWith更方便;
+//区别在于，html()会替换指定元素内部的HTML，而replaceWith()会替换元素本身及其内部的HTML。
+$("#flash").fadeOut();
+$("#reply > form").replaceWith('<%= j render 'shared/reply_form'  %>');
+$('#reply_remark')[0].focus();  //光标栏位重置

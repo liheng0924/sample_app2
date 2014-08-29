@@ -17,22 +17,23 @@
     </div>
     <div class="tools pull-right">
       <% if current_user?(@micropost.user) %>
-          <%= link_to 'Edit', edit_micropost_path(@micropost) %>
+          <%= link_to "delete", @micropost, method: :delete,
+                      title: @micropost.content ,remote:true%>
       <% end %>
     </div>
   </div>
 
   <div id="replies" class="box box-gray">
     <div class="total">
-      共收到<%=@replies.count %>条回复
+      共收到N条回复
     </div>
     <div class="items">
       <% if @replies.any? %>
-          <%= render  @replies  %>
+          <%= render partial: 'shared/reply', collection: @replies %>
+          <div class="pagination">
+            <%= will_paginate @replies %>
+          </div>
       <% end %>
-    </div>
-    <div class="pagination">
-      <%= will_paginate @replies %>
     </div>
   </div>
   <div id="reply" class="form box">

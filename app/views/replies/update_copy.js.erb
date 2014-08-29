@@ -1,0 +1,5 @@
+$("#<%= @reply.id %>").replaceWith("<%= j render @reply %>");
+<% @reply = @micropost.replies.build  %>   //reset for new form
+$(".edit_reply").replaceWith('<%= j render 'shared/reply_form'  %>');
+$(".new_reply")[0].reset();
+

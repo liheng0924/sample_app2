@@ -1,0 +1,13 @@
+<div id="flash">
+  <!-- 预留，用于显示flash通知 -->
+</div>
+<%= form_for(@reply,remote: true) do |f| %>
+ <div id="errors">
+   <%= render 'shared/error_messages', object: f.object %>
+ </div>
+ <div class='field'>
+   <%= f.hidden_field :micropost_id, placeholder: "Compose new reply..." %>
+  <%= f.text_area :remark, placeholder: "Compose new reply..." %>
+ </div>
+ <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

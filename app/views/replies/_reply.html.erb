@@ -1,0 +1,18 @@
+<div class="reply" id="<%=reply.id%>">
+  <div class="pull-left face"  >
+    <%= link_to gravatar_for(reply.user), reply.user%>
+  </div>
+  <div class="infos">
+    <div class="info">
+      <span class="name"><%= link_to reply.user.name, reply.user %></span>
+      <span class="time">Posted <%= time_ago_in_words(reply.created_at) %> ago.</span>
+      <span class="opts">
+        <%= link_to 'Edit', edit_reply_path(reply), remote:true %>
+        <%= link_to "delete", reply, method: :delete,remote:true%>
+      </span>
+    </div>
+    <div class="body">
+      <%= wrap(reply.remark) %>
+    </div>
+  </div>
+</div>

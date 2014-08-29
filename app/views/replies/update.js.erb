@@ -1,0 +1,12 @@
+<%if @reply.errors.empty? %>
+  $("#<%= @reply.id %>").replaceWith("<%= j render @reply %>");
+  $("#flash").html('<%= escape_javascript(render 'shared/flash_messages') %>').hide().fadeIn();
+  <% @reply = Reply.new  %>
+  $(".edit_reply").replaceWith('<%= j render 'shared/reply_form'  %>'); //更新表单（1）
+  $(".edit_reply")[0].reset(); //重置
+<%else%>
+  $("#flash").fadeOut();
+  $("#errors").html('<%= escape_javascript(render 'shared/error_messages', object: @reply) %>').hide().fadeIn();
+<%end%>
+
+
